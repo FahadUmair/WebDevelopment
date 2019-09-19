@@ -1,0 +1,87 @@
+<html>
+
+	<head>
+
+		<title>Javascript</title>
+		
+
+	</head>
+
+	
+	<body>
+	
+			<p>How many fingers are you holding up?</p>
+			
+			<select id="mynumber">
+			<option>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			</select>
+			
+			<button id="guess">Guess</button>
+			
+		<script type="text/javascript">
+		
+				function doaguess (correctanswer){
+				
+				var guess=Math.random ();
+				guess=guess*6;
+				guess=Math.floor(guess);
+			
+			if (guess==correctanswer) {
+			
+			return(true)
+			
+			
+			
+			} else {
+			
+				return(false)
+				
+			
+			}
+			
+			}
+				
+				
+		
+			document.getElementById("guess").onclick=function(){
+			
+				var mynumber=document.getElementById("mynumber").value;
+				
+				var gotit= false;
+				
+				var numberofguesses=1;
+				
+				while (gotit==false){
+
+				
+				
+			
+			if (doaguess(mynumber)==false) {
+			
+			gotit=true;
+			
+			alert("Got it! It was a " + mynumber + " It took me "+ numberofguesses + " guesses.")
+			
+			} else {
+			
+				numberofguesses++;
+				
+			
+			}
+			
+			}
+			
+			}
+			
+		</script>
+	
+	</body>
+	
+
+
+</html>
